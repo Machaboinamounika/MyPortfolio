@@ -1,0 +1,633 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+ 
+  overflow-x: hidden;
+}
+
+/* Main Container */
+.container {
+  width: 100%;
+  position: relative;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+
+}
+.logo-container {
+  display: flex;
+  align-items: center; /* Ensures the text and logo are aligned */
+  gap: 10px; /* Adds some space between logo and text */
+}
+/* Logo */
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-left: 40px;
+}
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff5733, #ffbd33, #33ff57, #3380ff, #ff33a8);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s infinite linear;
+}
+
+/* Smooth gradient animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* Navigation Bar */
+.top-right-nav {
+  display: flex;
+  padding-right: 20px;
+}
+
+.top-right-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.top-right-nav ul li {
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.top-right-nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.top-right-nav ul li:hover,
+.top-right-nav ul li.active {
+  color: #00c3ff;
+}
+
+.top-right-nav ul li.active::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background: #00c3ff;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+/* Sections */
+section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  color: white;
+  background-image: url('assets/bg3.avif');
+}
+
+/* About Section */
+#about {
+  text-align: center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+}
+
+#about h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 18px;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Skills Section */
+.skills-carousel {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: white;
+  opacity: 0.7;
+}
+
+.skills-carousel h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill-item:hover {
+  transform: scale(1.05);
+}
+
+.skill-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* Other Sections */
+#experience,
+#projects,
+#contact,
+#aboutme {
+  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+#contact,
+#about,
+#experience {
+  background-image: url('assets/bg1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#experience h2,
+#projects h2,
+#contact h2, 
+#about h2{
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#experience p,
+#projects p,
+#contact p, 
+#about p{
+  font-size: 18px;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 15px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .top-right-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .top-right-nav ul li {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  section {
+      min-height: 70vh; /* Further reduced */
+      padding: 60px 20px; /* Adjust padding */
+    
+  }
+  
+  #about h2,
+  .skills-carousel h2,
+  #experience h2,
+  #projects h2,
+  #contact h2{
+    font-size: 30px;
+  }
+
+  #experience p,
+  #projects p,
+  #contact p 
+  #aboutme p{
+    font-size: 16px;
+  }
+}
+#skills h2{
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+#about p{
+  font-size: 20px;
+  align-items: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: auto;
+  transition: transform 0.3s ease-in-out;
+}
+.about-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-card:hover {
+  transform: scale(1.02);
+}
+
+.about-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 4px solid white;
+}
+
+.about-content {
+  color: rgb(8, 8, 8);
+}
+
+.know-more-btn {
+  background: linear-gradient(45deg, #ff5733, #ffbd33);
+  border: none;
+  padding: 20px 20px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.know-more-btn:hover {
+  background: linear-gradient(45deg, #ffbd33, #ff5733);
+}
+
+@keyframes textGlow {
+  0% { color: #4018d0; text-shadow: 0 0 5px #e733ff58; }
+  25% { color: #ffbd33; text-shadow: 0 0 10px #ffbd33; }
+  50% { color: #33ff57; text-shadow: 0 0 15px #33ff57; }
+  75% { color: #3380ff; text-shadow: 0 0 10px #3380ff; }
+  100% { color: #ff5733; text-shadow: 0 0 5px #281cd0; }
+}
+
+.animated-name {
+  font-style: italic;
+  font-size: 28px;
+  display: inline-block;
+  animation: textGlow 3s infinite alternate;
+}
+#aboutme,
+#projects {
+  background-image: url('assets/bg3.avif');
+}
+.contact-section {
+  background-image: url('assets/bg1.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+}
+
+/* Title Styling */
+.contact-section h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* Subtitle */
+.contact-section p {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+/* Icons Container */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Circular Icon Styling */
+.contact-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid green;
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Effect */
+.contact-icon:hover {
+  background-color: green;
+  transform: scale(1.1);
+}
+  .arrow-up {
+    position: absolute ;
+    bottom: 70px;  /* Places arrow at the bottom */
+    left: 50%;
+    font-size: 24px;
+    color: white;
+    background: green;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    
+}
+
+.arrow-up:hover {
+    transform: translateY(-5px);
+    color: green;
+}
+
+/* Projects Section */
+
+.projects-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f9fa;
+}
+
+/* Kanban Board */
+.kanban-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Kanban Card */
+.kanban-card {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.kanban-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Project Title */
+.kanban-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Skills Used */
+.kanban-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* GitHub Link */
+.kanban-card a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.kanban-card a i {
+  margin-right: 5px;
+}
+
+.kanban-card a:hover {
+  background: #555;
+}
+
+/* "More" Button */
+.more-btn {
+  margin-top: 12px;
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.more-btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 25px;
+  width: 50%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button (Top Right Corner) */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+/* Project Title */
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+/* Project Description */
+.modal-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Key Responsibilities List */
+.modal-content ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.modal-content ul li {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+/* GitHub Link Button */
+.modal-content a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.modal-content a:hover {
+  background: #555;
+}
+
+/* Sample Section (Placeholder for Future Content) */
+.sample-section {
+  margin-top: 20px;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  font-style: italic;
+  color: #777;
+  text-align: center;
+}
+
+/* Kanban Card Styling */
+.kanban-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.kanban-card:hover {
+  transform: scale(1.02);
+}
+
+/* More Button */
+.more-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.more-btn:hover {
+  background: #0056b3;
+}
